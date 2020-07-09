@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Layouts</title>
+    <style>
+        /* super centered */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            border-radius: 4px;
+            box-shadow: 0 2px 2px rgba(0,0,0,.6);
+        } */
+
+        /* deconstructed pancake */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            height: 300px;
+            background: deepskyblue;
+            flex: 0 1 300px;
+            margin: 5px;
+        } */
+
+        /* sidebar says */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: minmax(150px, 25%) 1fr;
+        }
+
+        aside {
+            background: seagreen;
+        }
+
+        main {
+            background: steelblue;
+        } */
+
+        /* pancake stack */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header {
+            background: seagreen;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            background: steelblue;
+        }
+        
+        footer {
+            background: indianred;
+            padding: 1em 0;
+            text-align: center;
+        } */
+
+        /* holy grail */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template: auto 1fr auto / auto 1fr auto;
+        }
+
+        header,
+        footer {
+            padding: 1em 0;
+            text-align: center;
+            background: seagreen;
+            grid-column: 1 / 4;
+        }
+
+        .left {
+            grid-column: 1 / 2;
+            background: indianred;
+            padding: 1em;
+        }
+
+        .right {
+            grid-column: 3 / 4;
+            background: indianred;
+            padding: 1em;
+        }
+
+        main {
+            grid-column: 2 / 3;
+            background: steelblue;
+        } */
+
+        /* RAM (Repeat, Auto, Minmax) */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        div {
+            margin: 1em;
+            height: 200px;
+            background: deepskyblue;
+        } */
+
+        /* clamp(min, actual, max) */
+        /* body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        div {
+            width: clamp(23ch, 50%, 46ch);
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            background: seagreen;
+        }
+
+        img {
+            height: 125px;
+            width: 100%;
+            background: steelblue;
+        } */
+    </style>
+</head>
+<body>
+    <!-- super centered -->
+    <!-- <div></div> -->
+
+    <!-- deconstructed pancake -->
+    <!-- <div></div>
+    <div></div>
+    <div></div> -->
+
+    <!-- sidebar says -->
+    <!-- <aside></aside>
+    <main></main> -->
+
+    <!-- pancake stack -->
+    <!-- <header>header content</header>
+    <main></main>
+    <footer>footer content</footer> -->
+
+    <!-- holy grail -->
+    <!-- <header>header</header>
+    <aside class="left">left</aside>
+    <main></main>
+    <aside class="right">right</aside>
+    <footer>footer</footer> -->
+
+    <!-- RAM (Repeat, Auto, Minmax) -->
+    <!-- <div></div>
+    <div></div>
+    <div></div>
+    <div></div> -->
+
+    <!-- clamp(min, actual, max) -->
+    <!-- <div>
+        <h3>title</h3>
+        <img src="#" alt="img">
+        <p>text</p>
+    </div> -->
+</body>
+</html>

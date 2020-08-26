@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{143:function(t,n,e){"use strict";e.r(n),e.d(n,"getUsers",(function(){return r}));function r(){return fetch("https://jsonplaceholder.typicode.com/users/").then(t=>{if(!t)throw Error(t.statusText);return t.json()}).then(t=>t)}}}]);

@@ -1,0 +1,18 @@
+$color: #8e8e8e;
+
+output {
+    color: $color;
+    border: 1px solid $color;
+    border-radius: 4px;
+    padding: .5rem;
+    user-select: none;
+    transition: transform .2s;
+
+    & span {
+        color: #eee;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin System Example</title>
+</head>
+<body>
+
+    <script>
+        const calc = {
+            curVal: 0,
+
+            setVal(val) {
+                this.curVal = val
+                console.log(this.curVal)
+            },
+
+            core: {
+                'plus': (curVal, add) => curVal + add,
+                'minus': (curVal, sub) => curVal - sub
+            },
+
+            plugins: {},
+
+            press(btn, newVal) {
+                const f = this.core[btn] || this.plugins[btn]
+                this.setVal(f(this.curVal, newVal))
+            },
+
+            reg(plugin) {
+                const { name, exec } = plugin
+                this.plugins[name] = exec
+            }
+        }
+
+        const square = {
+            name: 'square',
+            exec: val => val * val
+        }
+
+        calc.reg(square)
+
+        calc.setVal(3)
+        calc.press('plus', 2)
+        calc.press('square')
+        calc.press('square')
+    </script>
+</body>
+</html>

@@ -1,8 +1,0 @@
-{
-  "name": "server-sent-events-example",
-  "description": "Server Sent Events Example",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  }
-}

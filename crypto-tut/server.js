@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 3000
 
 const router = express.Router()
 
@@ -23,4 +24,4 @@ router.get('/secure-api', (req, res) => {
     res.json(data)
 })
 
-app.listen(3000, () => console.log('Server ready'))
+app.listen(PORT, () => console.log('Server ready'))

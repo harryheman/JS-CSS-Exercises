@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      .tab-button {
+        padding: 6px 10px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        background: #f0f0f0;
+        margin-bottom: -1px;
+        margin-right: -1px;
+      }
+      .tab-button:hover {
+        background: #e0e0e0;
+      }
+      .tab-button.active {
+        background: #e0e0e0;
+      }
+      .tab {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="app">
+      <button
+        v-for="tab in tabs"
+        :key="tab"
+        :class="['tab-button', {active: curTab === tab}]"
+        @click="curTab = tab"
+      >
+        {{tab}}
+      </button>
+
+      <component :is="curTabCom" class="tab"></component>
+    </div> -->
+
+    <!-- or -->
+    <div id="app">
+      <button
+        v-for="tab in tabs"
+        :key="tab.name"
+        :class="['tab-button', {active: curTab.name === tab.name}]"
+        @click="curTab = tab"
+      >
+        {{tab.name}}
+      </button>
+
+      <component :is="curTab.component" class="tab"></component>
+    </div>
+
+    <script>
+      /*
+      Vue.component("tab-home", {
+        template: "<div>Home</div>",
+      });
+      Vue.component("tab-posts", {
+        template: "<div>Posts</div>",
+      });
+      Vue.component("tab-archive", {
+        template: "<div>Archive</div>",
+      });
+
+      new Vue({
+        el: "#app",
+        data: {
+          curTab: "Home",
+          tabs: ["Home", "Posts", "Archive"],
+        },
+        computed: {
+          curTabCom() {
+            return `tab-${this.curTab.toLowerCase()}`;
+          },
+        },
+      });
+    */
+
+      // or
+      const tabs = [
+        {
+          name: "Home",
+          component: {
+            template: "<div>Home</div>",
+          },
+        },
+        {
+          name: "Posts",
+          component: {
+            template: "<div>Posts</div>",
+          },
+        },
+        {
+          name: "Archive",
+          component: {
+            template: "<div>Archive</div>",
+          },
+        },
+      ];
+
+      new Vue({
+        el: "#app",
+        data: {
+          tabs,
+          curTab: tabs[0],
+        },
+      });
+    </script>
+  </body>
+</html>

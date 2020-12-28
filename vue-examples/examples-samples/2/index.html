@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      #app {
+        display: grid;
+        place-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <form @submit.prevent="addTodo">
+        <label for="new-todo">Add todo</label>
+        <input v-model="todoText" id="new-todo" placeholder="some text" />
+        <button>Add</button>
+      </form>
+      <ul>
+        <li
+          is="todo-item"
+          v-for="(todo, index) in todos"
+          :key="todo.id"
+          :title="todo.title"
+          @remove="todos.splice(index, 1)"
+        ></li>
+      </ul>
+    </div>
+
+    <script>
+      Vue.component("todo-item", {
+        template: `
+            <li>
+                {{ title }}
+                <button @click="$emit('remove')">
+                    Remove
+                </button>
+            </li>
+            `,
+        props: ["title"],
+      });
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          todoText: "",
+          todos: [
+            {
+              id: 1,
+              title: "foo",
+            },
+            {
+              id: 2,
+              title: "bar",
+            },
+            {
+              id: 3,
+              title: "baz",
+            },
+          ],
+          nextId: 4,
+        },
+        methods: {
+          addTodo() {
+            this.todos.push({
+              id: this.nextId++,
+              title: this.todoText,
+            });
+            this.todoText = "";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

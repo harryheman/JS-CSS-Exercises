@@ -1,7 +1,0 @@
-type Item {
-    name: String
-    isComplete: Boolean
-}
-type Query {
-    allItems: [Item!]
-}

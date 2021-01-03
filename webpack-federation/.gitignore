@@ -1,0 +1,9 @@
+node_modules
+build
+dist
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen

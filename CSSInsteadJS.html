@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        /* smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+      /* smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
 
-        /* sticky navigation */
-        nav {
-            position: sticky;
-            top: 0;
-        }
+      /* sticky navigation */
+      nav {
+        position: sticky;
+        top: 0;
+      }
 
-        /* truncate text */
-        /* .card {
+      /* truncate text */
+      /* .card {
             width: 320px;
         }
 
@@ -35,49 +34,48 @@
             -webkit-line-clamp: 5;
         } */
 
-        /* dark mode */
+      /* dark mode */
+      :root {
+        --color: #222;
+        --background: #eee;
+        --text: 'default';
+      }
+
+      body {
+        color: var(--color);
+        background: var(--background);
+      }
+
+      body:after {
+        content: var(--text);
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+      }
+
+      @media (prefers-color-scheme: light) {
         :root {
-            --color: #222;
-            --background: #eee;
-            --text: 'default';
+          --color: #222;
+          --background: #eee;
+          --text: 'light';
         }
+      }
 
-        body {
-            color: var(--color);
-            background: var(--background);
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color: #eee;
+          --background: #222;
+          --text: 'dark';
         }
-
-        body:after {
-            content: var(--text);
-            display: block;
-            text-align: center;
-            font-size: 3rem;
-        }
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --color: #222;
-                --background: #eee;
-                --text: 'light';
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color: #eee;
-                --background: #222;
-                --text: 'dark';
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- truncate text -->
     <!-- <div class="card">
         <h3 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, quisquam.</h3>
         <p class="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sapiente nihil animi sed. Saepe non dolore molestiae repellendus reprehenderit dolorem ea doloremque, quidem, iure corporis veniam repudiandae fugiat dicta delectus minus blanditiis illo recusandae odio eius temporibus labore in perspiciatis. Laboriosam magnam fugit aliquam iusto distinctio non quas quaerat iure.</p>
     </div> -->
-</body>
-
+  </body>
 </html>

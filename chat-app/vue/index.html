@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Chat App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="col-lg-6 offset-lg-3">
+        <div v-if="ready">
+          <p v-for="user in info">
+            {{user.name}} {{user.type}}
+          </p>
+        </div>
+
+        <div v-if="!ready">
+          <h4>Enter your username</h4>
+          <form @submit.prevent="addUser">
+            <div class="form-group row">
+              <input type="text" class="form-control col-9" placeholder="Enter username here" v-model="username">
+              <input type="submit" value="Noname" class="btn btn-sm btn-info ml-1">
+            </div>
+          </form>
+        </div>
+        <h2 v-else>{{username}}</h2>
+        <div class="card bg-info" v-if="ready">
+          <div class="card-header text-white">
+            <h4>My Chat App <span class="float-right">{{connections}} connections</span></h4>
+          </div>
+          <ul class="list-group list-group-flush text-right">
+            <small v-if="typing" class="text-white">{{typing}} is typing</small>
+            <li class="list-group-item" v-for="{message, user} in messages">
+              <span :class="{'float-left': message.type === 1}">
+                {{message}}
+                <small>:{{user ? user : 'Noname'}}</small>
+              </span>
+            </li>
+          </ul>
+          <div class="card-body">
+            <form @submit.prevent="send">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter message here" v-model="newMessage">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
